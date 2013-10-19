@@ -1,0 +1,17 @@
+# mininet com delay e brandwith
+sudo mn --link tc,bw=10,delay=10ms
+
+nodes
+net
+dump
+
+h1000 ip r add default dev h1000-eth1
+h9999 ip r add h1000 dev h9999-eth0
+h0 ip r add default dev h0-eth1
+h3 ip r add default dev h3-eth1
+h6 ip r add default dev h6-eth1
+
+
+h0 iptables -A FORWARD -i h0-eth0 -j ACCEPT
+h0 iptables -A FORWARD -o h0-eth0 -j ACCEPT
+h0 iptables -t nat -A POSTROUTING -o h0-eth1 -j MASQUERADE
