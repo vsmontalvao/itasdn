@@ -46,6 +46,7 @@ class ITATopo(Topo):
 			   bw=100, delay='5ms', loss=10, max_queue_size=1000, use_htb=True)
 #		host.cmd('ip r add default dev h'+str(div*numhostsdiv + numhostsdiv-h-1)+'-eth1')
 
+#Fazendo teste (Thiago)
 
 def addRoutes(net):
     for h in net.hosts:
